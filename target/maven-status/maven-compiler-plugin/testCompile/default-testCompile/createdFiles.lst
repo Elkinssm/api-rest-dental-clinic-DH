@@ -1,0 +1,5 @@
+com\dh\apiDentalClinic\service\impl\AddressServiceImplTest.class
+com\dh\apiDentalClinic\ApiDentalClinicApplicationTests.class
+com\dh\apiDentalClinic\service\impl\DentistServiceImplTest.class
+com\dh\apiDentalClinic\service\impl\PatientServiceImplTest.class
+com\dh\apiDentalClinic\service\impl\TurnServiceImplTest.class

@@ -1,0 +1,578 @@
+{
+	"info": {
+		"_postman_id": "50046279-229a-4dca-8cb6-00342e1c9774",
+		"name": "TestApi_Java",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "8623951"
+	},
+	"item": [
+		{
+			"name": "RegisterUser",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\":\"user\",\r\n    \"password\": \"12345\",\r\n    \"userName\":\"user\",\r\n    \"email\":\"user@test.com\"\r\n    \r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8081/auth/new",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"auth",
+						"new"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "RegisterUserAdmin",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\":\"admin\",\r\n    \"password\": \"12345\",\r\n    \"userName\":\"admin\",\r\n    \"email\":\"admisn@test.com\",\r\n    \"roles\":[\"admin\"]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8081/auth/new",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"auth",
+						"new"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "LoginUser",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImV4cCI6MTY1NzYyMzQ0MX0.WBSmMZ0psI4_dDKXgQ6UJ-XzkBXomMD-pSLro3y-2b7R4PkMwQ-z3Sv9anAHoQQXr9T6kpEoDlB0sOmFWJamhg",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"userName\":\"admin\",\r\n    \"password\":\"12345\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8081/auth/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"auth",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GuardarOdontologo",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImV4cCI6MTY1NzYyMzQ0MX0.WBSmMZ0psI4_dDKXgQ6UJ-XzkBXomMD-pSLro3y-2b7R4PkMwQ-z3Sv9anAHoQQXr9T6kpEoDlB0sOmFWJamhg",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n \"name\":\"dentist1\",\r\n \"lastName\":\"dentsitsLastName\",\r\n \"registrationNumber\":\"12eetr\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8081/dentist/add",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"dentist",
+						"add"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "BuscarOdontologos",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pblRvZG8iLCJleHAiOjE2NTc1OTE1Mjh9.9Cscg2ppRVsoTZ5my2M2RkMRoyyK0lewk1WxJksIge8ceBoSwcFt_ciD91F26Aqxhhc2Lvk7REHwhi54pPWTwQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8081/dentist/all",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"dentist",
+						"all"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "BuscarOdontologoPorId",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pblRvZG8iLCJleHAiOjE2NTc1OTE1Mjh9.9Cscg2ppRVsoTZ5my2M2RkMRoyyK0lewk1WxJksIge8ceBoSwcFt_ciD91F26Aqxhhc2Lvk7REHwhi54pPWTwQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8081/dentist/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"dentist",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "BorrarOdontologoPorId",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pblRvZG8iLCJleHAiOjE2NTc1OTAzMTF9.VC63gOWtRgwihnxJKJrx7F25iy1xrPYAu6idSjAt47NwZYRem9OCcnpBs1RaD2dA87V2AhluVbIoLh8TvsRtuQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8081/dentist/delete/3",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"dentist",
+						"delete",
+						"3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ActualizarOdontologo",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pblRvZG8iLCJleHAiOjE2NTc1OTAzMTF9.VC63gOWtRgwihnxJKJrx7F25iy1xrPYAu6idSjAt47NwZYRem9OCcnpBs1RaD2dA87V2AhluVbIoLh8TvsRtuQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": 4,\r\n    \"name\": \"dentist4\",\r\n    \"lastName\": \"dentsitsLastName4\",\r\n    \"registrationNumber\": \"12eet4r\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8081/dentist/update/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"dentist",
+						"update",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GuardarPaciente",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImV4cCI6MTY1NzYyMzQ0MX0.WBSmMZ0psI4_dDKXgQ6UJ-XzkBXomMD-pSLro3y-2b7R4PkMwQ-z3Sv9anAHoQQXr9T6kpEoDlB0sOmFWJamhg",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \r\n  \"name\": \"string\",\r\n  \"lastName\": \"string\",\r\n  \"admissionsDate\": \"11-07-2022\",\r\n  \"address\": {\r\n    \r\n    \"street\": \"string\",\r\n    \"number\": \"string\",\r\n    \"locality\": \"string\",\r\n    \"province\": \"string\"\r\n  },\r\n  \"dni\": \"string\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8081/patient/add",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"patient",
+						"add"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "BuscarPacientes",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/patient/all",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"patient",
+						"all"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "BorrarPacientePorId",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pblRvZG8iLCJleHAiOjE2NTc1OTAzMTF9.VC63gOWtRgwihnxJKJrx7F25iy1xrPYAu6idSjAt47NwZYRem9OCcnpBs1RaD2dA87V2AhluVbIoLh8TvsRtuQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8081/patient/delete/3",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"patient",
+						"delete",
+						"3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "BuscarPacientePorId",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pblRvZG8iLCJleHAiOjE2NTc1OTE1Mjh9.9Cscg2ppRVsoTZ5my2M2RkMRoyyK0lewk1WxJksIge8ceBoSwcFt_ciD91F26Aqxhhc2Lvk7REHwhi54pPWTwQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8081/patient/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"patient",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ActualizarPaciente",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pblRvZG8iLCJleHAiOjE2NTc1OTAzMTF9.VC63gOWtRgwihnxJKJrx7F25iy1xrPYAu6idSjAt47NwZYRem9OCcnpBs1RaD2dA87V2AhluVbIoLh8TvsRtuQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": " {\r\n        \"id\": 4,\r\n        \"name\": \"test4\",\r\n        \"lastName\": \"test4\",\r\n        \"admissionsDate\": null,\r\n        \"address\": {\r\n            \"id\": 4,\r\n            \"street\": \"test2\",\r\n            \"number\": \"test2\",\r\n            \"locality\": \"test2\",\r\n            \"province\": \"test2\"\r\n        },\r\n        \"dni\": \"test2\"\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8081/patient/update/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"patient",
+						"update",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "BuscarDomicilios",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \r\n  \"dentist_id\": 1,\r\n  \"patient_id\": 1,\r\n  \"date\": \"22/06/2022\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/turn/all",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"turn",
+						"all"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GuardarTurno",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImV4cCI6MTY1NzYyMzQ0MX0.WBSmMZ0psI4_dDKXgQ6UJ-XzkBXomMD-pSLro3y-2b7R4PkMwQ-z3Sv9anAHoQQXr9T6kpEoDlB0sOmFWJamhg",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"dentist_id\": 1,\r\n    \"patient_id\": 1,\r\n    \"date\": \"11-07-2022\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8081/turn/add",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"turn",
+						"add"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "BuscarTurnos",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbnMiLCJleHAiOjE2NTc1OTY2NzR9.SUeZntCNxc3JfqCzQDCGc9ECyjGJDr435Dig_MgYcCzgTJseS6Tab0TPrNL5JBCupXH894VHteg7PgGkbAdodg",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8081/turn/all",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"turn",
+						"all"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ActualizarTurno",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pblRvZG8iLCJleHAiOjE2NTc1OTAzMTF9.VC63gOWtRgwihnxJKJrx7F25iy1xrPYAu6idSjAt47NwZYRem9OCcnpBs1RaD2dA87V2AhluVbIoLh8TvsRtuQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{   \"id\":1,\r\n    \"dentist_id\": 2,\r\n    \"patient_id\": 1,\r\n    \"date\": \"2022-07-11T16:03:09.255Z\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8081/turn/update/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"turn",
+						"update",
+						""
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
